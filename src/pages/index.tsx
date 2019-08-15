@@ -15,6 +15,7 @@ type PageProps = {
       slug: string
       cover: ChildImageSharp
     }
+
     threeProjects: {
       nodes: {
         title: string
@@ -22,9 +23,16 @@ type PageProps = {
         cover: ChildImageSharp
       }[]
     }
+    twoProjects: {
+      nodes: {
+        title: string
+        slug: string
+        cover: ChildImageSharp
+      }[]
+    }
+
     aboutUs: ChildImageSharp
-    instagram: ChildImageSharp
-  }
+}
 }
 
 const Area = styled(animated.div)`
@@ -34,7 +42,7 @@ const Area = styled(animated.div)`
   grid-template-areas:
     'first-project about-us about-us'
     'three-projects three-projects three-projects'
-    'instagram instagram instagram';
+    'two-projects two-projects two-projects';
 
   @media (max-width: ${props => props.theme.breakpoints[3]}) {
     grid-template-columns: repeat(4, 1fr);
@@ -44,7 +52,7 @@ const Area = styled(animated.div)`
       'first-project first-project about-us about-us'
       'three-projects three-projects three-projects three-projects'
       'three-projects three-projects three-projects three-projects'
-      'instagram instagram instagram instagram';
+      'two-projects two-projects two-projects';
   }
 
   @media (max-width: ${props => props.theme.breakpoints[1]}) {
@@ -56,7 +64,7 @@ const Area = styled(animated.div)`
       'three-projects three-projects'
       'three-projects three-projects'
       'three-projects three-projects'
-      'instagram instagram';
+      'two-projects two-projects';
   }
 
   @media (max-width: ${props => props.theme.breakpoints[0]}) {
@@ -69,7 +77,7 @@ const Area = styled(animated.div)`
       'three-projects'
       'three-projects'
       'three-projects'
-      'instagram';
+      'two-projects';
   }
 `
 
@@ -89,14 +97,19 @@ const ThreeProjects = styled.div`
   @media (max-width: ${props => props.theme.breakpoints[1]}) {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr 1fr;
-  }
-`
+  }`
 
-const Instagram = styled(GridItem)`
-  grid-area: instagram;
-`
+  const TwoProjects = styled.div`
+  grid-area: two-projects;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
 
-const Index: React.FunctionComponent<PageProps> = ({ data: { firstProject, threeProjects, aboutUs, instagram } }) => {
+  @media (max-width: ${props => props.theme.breakpoints[1]}) {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+  }`
+
+const Index: React.FunctionComponent<PageProps> = ({ data: { firstProject, threeProjects, aboutUs, twoProjects } }) => {
   const pageAnimation = useSpring({
     config: config.slow,
     from: { opacity: 0 },
@@ -123,10 +136,14 @@ const Index: React.FunctionComponent<PageProps> = ({ data: { firstProject, three
             </GridItem>
           ))}
         </ThreeProjects>
-        <Instagram to="/instagram" aria-label="See my Instagram pictures">
-          <Img fluid={instagram.childImageSharp.fluid} />
-          <span>Instagram</span>
-        </Instagram>
+        <TwoProjects>
+          {twoProjects.nodes.map(project => (
+            <GridItem to={project.slug} key={project.slug} aria-label={`View project "${project.title}"`}>
+              <Img fluid={project.cover.childImageSharp.fluid} />
+              <span>{project.title}</span>
+            </GridItem>
+          ))}
+        </TwoProjects>
       </Area>
     </Layout>
   )
@@ -160,19 +177,26 @@ export const query = graphql`
         }
       }
     }
-    aboutUs: file(sourceInstanceName: { eq: "images" }, name: { eq: "about-us" }) {
+    twoProjects: allProjectsYaml(limit: 2, skip: 4) {
+      nodes {
+        title
+        slug
+        cover {
+          childImageSharp {
+            fluid(quality: 95, maxWidth: 1200) {
+              ...GatsbyImageSharpFluid_withWebp
+            }
+          }
+        }
+      }
+    }
+    aboutUs: file(sourceInstanceName: { eq: "images" }, name: { eq: "me-beach" }) {
       childImageSharp {
         fluid(quality: 95, maxWidth: 1200) {
           ...GatsbyImageSharpFluid_withWebp
         }
       }
     }
-    instagram: file(sourceInstanceName: { eq: "images" }, name: { eq: "instagram" }) {
-      childImageSharp {
-        fluid(quality: 95, maxWidth: 1920) {
-          ...GatsbyImageSharpFluid_withWebp
-        }
-      }
-    }
-  }
+}
+
 `

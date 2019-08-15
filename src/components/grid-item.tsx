@@ -20,8 +20,11 @@ const GridItem = styled(Link)`
     left: 0;
     right: 0;
     text-align: right;
-    font-weight: 700;
-    font-size: ${props => props.theme.fontSizes[4]};
+    font-weight: 400;
+    font-family: 'Times New Roman';
+    font-size: 4rem;
+    line-height: 0.8;
+    letter-spacing: -4px;
     padding: ${props => props.theme.space[6]};
     text-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 

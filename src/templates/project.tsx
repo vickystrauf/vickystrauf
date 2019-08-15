@@ -1,7 +1,7 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import Img from 'gatsby-image'
-import { transparentize, readableColor } from 'polished'
+import { transparentize } from 'polished'
 import styled from 'styled-components'
 import { config, useSpring, animated } from 'react-spring'
 import Layout from '../components/layout'
@@ -33,15 +33,14 @@ const Category = styled(AnimatedBox)`
 
 const Description = styled(animated.div)`
   max-width: 960px;
-  letter-spacing: -0.003em;
   --baseline-multiplier: 0.179;
   --x-height-multiplier: 0.35;
-  line-height: 1.58;
+  line-height: 1.6;
 `
 
 const PButton = styled(Button)<{ color: string }>`
-  background: ${props => (props.color === 'white' ? 'black' : props.color)};
-  color: ${props => readableColor(props.color === 'white' ? 'black' : props.color)};
+  background: #f88379;
+  color: #ffffff;
 `
 
 type PageProps = {
@@ -112,7 +111,8 @@ const Project: React.FunctionComponent<PageProps> = ({ data: { project, images }
           <div dangerouslySetInnerHTML={{ __html: project.desc }} />
         </Description>
       </PBox>
-      <Content bg={project.color} py={10}>
+      <Content bg='white' py={10}>
+      {/* <Content bg={project.color} py={10}> */}
         <PBox style={imagesAnimation} px={[6, 6, 8, 10]}>
           {images.nodes.map(image => (
             <Img alt={image.name} key={image.childImageSharp.fluid.src} fluid={image.childImageSharp.fluid} />
@@ -120,9 +120,9 @@ const Project: React.FunctionComponent<PageProps> = ({ data: { project, images }
         </PBox>
       </Content>
       <PBox style={{ textAlign: 'center' }} py={10} px={[6, 6, 8, 10]}>
-        <h2>Want to start your own project?</h2>
+        <h2>Do you want to work with me?</h2>
         <PButton color={project.color} py={4} px={8}>
-          Contact Us
+          Contact Me
         </PButton>
       </PBox>
     </Layout>
@@ -133,7 +133,7 @@ export default Project
 
 export const query = graphql`
   query ProjectTemplate($slug: String!, $images: String!) {
-    project: projectsYaml(slug: { eq: $slug }) {
+    project: projectsYaml,(slug: { eq: $slug }) {
       title_detail
       color
       category

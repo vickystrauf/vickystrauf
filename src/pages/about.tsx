@@ -4,6 +4,7 @@ import Layout from '../components/layout'
 import { AnimatedBox } from '../elements'
 import SEO from '../components/SEO'
 
+
 const About = () => {
   const pageAnimation = useSpring({
     config: config.slow,
@@ -11,14 +12,16 @@ const About = () => {
     to: { opacity: 1 },
   })
 
+
   return (
-    <Layout>
-      <SEO title="About | Jodie" desc="Hi. I'm LekoArts! You can visit my website or my other Gatsby projects." />
-      <AnimatedBox style={pageAnimation} py={[6, 6, 6, 8]} px={[6, 6, 8, 6, 8, 13]}>
-        <h1>Hi. I'm LekoArts!</h1>
+    <Layout color="#f88379">
+      <SEO title="About | Viktoria Strauf" desc="Hi. I'm Vicky, a self taught Graphic and Web Designer." />
+      <AnimatedBox style={pageAnimation} py={[6, 6, 6, 8]} px={[6, 6, 8, 6, 8, 13]} left-padding={10}>
+        <h1>Hi. I'm Vicky!</h1> 
+
         <p>
-          You can visit my <a href="https://www.lekoarts.de/en">website</a> or my other{' '}
-          <a href="https://gatsby-starter-portfolio.netlify.com">Gatsby projects</a>.
+        I'm a self taught Graphic and Web Designer. Check out my previous
+        projects and message me to discuss your needs. I'm looking forward to work with you!
         </p>
       </AnimatedBox>
     </Layout>

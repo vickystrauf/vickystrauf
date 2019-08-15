@@ -45,6 +45,7 @@ type AnimatedBoxProps = SpaceProps & WidthProps & ColorProps & FlexProps & Align
 
 export const AnimatedBox = styled(animated.div)<AnimatedBoxProps>`
   box-sizing: border-box;
+  background-color: #ffffff;
   ${space}
   ${width}
   ${color}
@@ -59,7 +60,6 @@ type FlexCompProps = SpaceProps & FlexWrapProps & FlexDirectionProps & AlignItem
 
 export const Flex = styled.div<FlexCompProps>`
   display: flex;
-  ${space}
   ${flexWrap}
   ${flexDirection}
   ${alignItems}
@@ -86,8 +86,8 @@ type ButtonProps = SpaceProps & WidthProps & ColorProps
 export const Button = styled.button<ButtonProps>`
   border-radius: 1000rem;
   border: none;
-  font-weight: 700;
-  font-size: 1.25rem;
+  font-weight: 500;
+  font-size: 1rem;
   &:hover {
     cursor: pointer;
   }

@@ -6,7 +6,8 @@ import 'typeface-work-sans'
 import { Box, Flex } from '../elements'
 import theme from '../../config/theme'
 import reset from '../styles/reset'
-import Logo from './logo'
+import Mail from '../icons/Mail'
+
 
 const GlobalStyles = createGlobalStyle`
   *::before,
@@ -15,22 +16,28 @@ const GlobalStyles = createGlobalStyle`
   }
   ::selection {
     color: white;
-    background-color: #f6993f;
-  }
+    background-color: #f88379 }
   html {
     box-sizing: border-box;
     border: 0;
     margin: 0;
     
-    h1, h2, h3, h4, h5, h6 {
+    h1, h3, h4, h5, h6 {
       font-weight: ${theme.fontWeights.bold};
+      font-family: 'Times New Roman';
     }
     
     h1 {
-      font-size: ${theme.fontSizes[5]};
+      // font-size: ${theme.fontSizes[5]};
+      font-size: 4.5rem;
+      letter-spacing: -2px;
+      color: #f88379;
+      font-weight: 400;
+      line-height: 0.8;
     }
     h2 {
       font-size: ${theme.fontSizes[4]};
+      font-weight: 300;
     }
     h3 {
       font-size: ${theme.fontSizes[3]};
@@ -73,14 +80,27 @@ const GlobalStyles = createGlobalStyle`
     margin: 0;
     padding: 0;
     color: black;
-    font-family: 'Work Sans', '-apple-system', 'Roboto', 'Helvetica', 'Arial', sans-serif;
+    font-family:   'Open Sans',
+    '-apple-system',
+    'BlinkMacSystemFont',
+    'Segoe UI',
+    'Roboto',
+    'Helvetica',
+    'Arial',
+    'sans-serif',
+    'Apple Color Emoji',
+    'Segoe UI Emoji',
+    'Segoe UI Symbol';
     background: white;
     font-size: 18px;
+    font-weight: 350;
+    line-height: 1.6;
   }
   a {
     transition: all 0.3s ease-in-out;
     color: black;
-    text-decoration: underline;
+    font-weight: 300;
+    text-decoration: none;
     &:hover,
     &:focus {
       color: ${theme.colors.primary};
@@ -98,6 +118,27 @@ const PartialNavLink = ({ children, to, ...rest }: { children: React.ReactNode; 
     {children}
   </Link>
 )
+
+const SocialIcon = styled.svg`
+    vertical-align: middle;
+    display: block; 
+    margin: auto; 
+    width: 7rem;
+    fill: #f88379;
+    :hover{
+        transform: scale(1);
+        transition: background-color .5s, transform .5s ease-out;
+        fill: #f88379;
+    }
+    :focus{
+        transform: scale(1.25);
+        transition: background-color .5s, transform .5s ease-out;
+        fill: #f88379;
+    }
+    // @media screen and (max-width: 1000px) {
+    //     width: 2rem;
+    // }
+`
 
 const Wrapper = styled.div`
   display: grid;
@@ -178,7 +219,7 @@ const Footer = styled.footer<{ color: string }>`
 
   background: ${props => props.color};
 
-  color: ${props => readableColor(`${props.color}`, `${props.theme.colors.grey}`, '#c3c3c3')};
+  color: ${props => readableColor(`${props.color}`, `${props.theme.colors.grey}`, '#000000')};
 
   a {
     color: ${props => readableColor(`${props.color}`)};
@@ -228,9 +269,9 @@ const Layout = ({ children, color }: LayoutProps) => {
               alignItems={['center', 'center', 'center', 'flex-start']}
               justifyContent="space-between"
             >
-              <Box width={['3rem', '4rem', '5rem', '6rem']}>
-                <Link to="/" aria-label="LekoArts, Back to Home">
-                  <Logo />
+              <Box width={['3rem', '4rem', '5rem', '6rem']} color="black">
+                <Link style={{color:'black'}} to="/" aria-label="VickyStrauf, Back to Home">
+                  <h1>Viktoria Strauf</h1>
                 </Link>
               </Box>
               <Nav
@@ -252,8 +293,21 @@ const Layout = ({ children, color }: LayoutProps) => {
           <Main>{children}</Main>
           <Footer color={color}>
             <Box p={[6, 6, 8]} fontSize={0}>
-              Starter by <a href="https://www.lekoarts.de/en">LekoArts</a>.<br />
-              <a href="https://github.com/LekoArts/gatsby-starter-portfolio-jodie">Source</a>.
+            <div>
+            <a href={`mailto:roadvagabonds@gmail.com`}>
+                    <SocialIcon
+                        preserveAspectRatio="xMidYMid meet"
+                        viewBox="0 0 512 512"
+                        role="img"
+                        aria-hidden="true"
+                        focusable="false"
+                    >
+                        <Mail />
+                    </SocialIcon> 
+                    </a>
+              </div>
+             <div>Viktoria Strauf, Manly</div>
+             <div>ABN: 99 769 826 112</div>
             </Box>
           </Footer>
         </Wrapper>
