@@ -1,13 +1,12 @@
-import React from 'react'
-import styled, { createGlobalStyle, ThemeProvider } from 'styled-components'
-import { graphql, Link, useStaticQuery } from 'gatsby'
-import { readableColor } from 'polished'
-import 'typeface-work-sans'
-import { Box, Flex } from '../elements'
-import theme from '../../config/theme'
-import reset from '../styles/reset'
-import Mail from '../icons/Mail'
-
+import React from "react";
+import styled, { createGlobalStyle, ThemeProvider } from "styled-components";
+import { graphql, Link, useStaticQuery } from "gatsby";
+import { readableColor } from "polished";
+import "typeface-work-sans";
+import { Box, Flex } from "../elements";
+import theme from "../../config/theme";
+import reset from "../styles/reset";
+import Mail from "../icons/Mail";
 
 const GlobalStyles = createGlobalStyle`
   *::before,
@@ -112,37 +111,50 @@ const GlobalStyles = createGlobalStyle`
   }
   
   ${reset}
-`
+`;
 
-const isPartiallyActive = ({ isPartiallyCurrent }: { isPartiallyCurrent: boolean }) =>
-  isPartiallyCurrent ? { className: 'navlink-active navlink' } : { className: 'navlink' }
+const isPartiallyActive = ({
+  isPartiallyCurrent
+}: {
+  isPartiallyCurrent: boolean;
+}) =>
+  isPartiallyCurrent
+    ? { className: "navlink-active navlink" }
+    : { className: "navlink" };
 
-const PartialNavLink = ({ children, to, ...rest }: { children: React.ReactNode; to: string }) => (
+const PartialNavLink = ({
+  children,
+  to,
+  ...rest
+}: {
+  children: React.ReactNode;
+  to: string;
+}) => (
   <Link getProps={isPartiallyActive} to={to} {...rest}>
     {children}
   </Link>
-)
+);
 
 const SocialIcon = styled.svg`
-    vertical-align: middle;
-    display: block; 
-    margin: auto; 
-    width: 7rem;
+  vertical-align: middle;
+  display: block;
+  margin: auto;
+  width: 7rem;
+  fill: #f88379;
+  :hover {
+    transform: scale(1);
+    transition: background-color 0.5s, transform 0.5s ease-out;
     fill: #f88379;
-    :hover{
-        transform: scale(1);
-        transition: background-color .5s, transform .5s ease-out;
-        fill: #f88379;
-    }
-    :focus{
-        transform: scale(1.25);
-        transition: background-color .5s, transform .5s ease-out;
-        fill: #f88379;
-    }
-    // @media screen and (max-width: 1000px) {
-    //     width: 2rem;
-    // }
-`
+  }
+  :focus {
+    transform: scale(1.25);
+    transition: background-color 0.5s, transform 0.5s ease-out;
+    fill: #f88379;
+  }
+  // @media screen and (max-width: 1000px) {
+  //     width: 2rem;
+  // }
+`;
 
 const Wrapper = styled.div`
   display: grid;
@@ -154,7 +166,7 @@ const Wrapper = styled.div`
   @media (max-width: ${props => props.theme.breakpoints[2]}) {
     grid-template-columns: 1fr;
   }
-`
+`;
 
 const SideBarInner = styled(Box)<{ bg: string }>`
   position: fixed;
@@ -162,8 +174,8 @@ const SideBarInner = styled(Box)<{ bg: string }>`
   width: ${props => props.theme.sidebarWidth.big};
   display: flex;
   flex-direction: column;
-  flex-wrap: nowrap;
-  justify-content: space-between;
+  // flex-wrap: nowrap;
+  // justify-content: space-between;
 
   background: ${props => props.bg};
 
@@ -179,7 +191,7 @@ const SideBarInner = styled(Box)<{ bg: string }>`
   svg {
     fill: ${props => readableColor(`${props.bg}`)};
   }
-`
+`;
 
 const Nav = styled(Flex)<{ color: string }>`
   a {
@@ -208,13 +220,13 @@ const Nav = styled(Flex)<{ color: string }>`
       margin-left: ${props => props.theme.space[2]};
     }
   }
-`
+`;
 
 const Main = styled.main`
   @media (min-width: calc(${props => props.theme.breakpoints[2]} + 1px)) {
     grid-column-start: 2;
   }
-`
+`;
 
 const Footer = styled.footer<{ color: string }>`
   position: fixed;
@@ -223,7 +235,8 @@ const Footer = styled.footer<{ color: string }>`
 
   background: ${props => props.color};
 
-  color: ${props => readableColor(`${props.color}`, `${props.theme.colors.grey}`, '#000000')};
+  color: ${props =>
+    readableColor(`${props.color}`, `${props.theme.colors.grey}`, "#000000")};
 
   a {
     color: ${props => readableColor(`${props.color}`)};
@@ -241,46 +254,51 @@ const Footer = styled.footer<{ color: string }>`
     position: relative;
     width: 100%;
   }
-`
+`;
 
 const Logo = styled.div`
- display: flex;
- text-align: center;`
+  display: flex;
+  text-align: center;
+`;
 
- const Title = styled.h1`
-//  display: block-inline;
- text-align: center;
- margin-block-end: 0;
- display: flex;
- margin-block-end: 0.2em;`
+const Title = styled.h1`
+  //  display: block-inline;
+  text-align: center;
+  margin-block-end: 0;
+  display: flex;
+  margin-block-end: 0.2em;
+`;
 
- const Subtitle = styled.div`
-//  display: block-inline;
- text-align: center;
- font-size: 20px;
- letter-spacing: 1px;
- `
+const Subtitle = styled.div`
+  //  display: block-inline;
+  text-align: center;
+  font-size: 20px;
+  letter-spacing: 1px;
+`;
 const Love = styled.p`
- font-size: 14px;
- color: #f88379;`
+  font-size: 14px;
+  color: #f88379;
+  display: flex;
+  justify-content: center;
+`;
 
-type LayoutProps = { children: React.ReactNode } & typeof defaultProps
+type LayoutProps = { children: React.ReactNode } & typeof defaultProps;
 
 const defaultProps = {
-  color: 'white',
-}
+  color: "white"
+};
 
 interface QueryResult {
   navigation: {
     nodes: {
-      name: string
-      link: string
-    }[]
-  }
+      name: string;
+      link: string;
+    }[];
+  };
 }
 
 const Layout = ({ children, color }: LayoutProps) => {
-  const data: QueryResult = useStaticQuery(query)
+  const data: QueryResult = useStaticQuery(query);
 
   return (
     <ThemeProvider theme={theme}>
@@ -290,65 +308,68 @@ const Layout = ({ children, color }: LayoutProps) => {
           <SideBarInner bg={color} as="aside" p={[6, 6, 8]}>
             <Flex
               flexWrap="nowrap"
-              flexDirection={['row', 'row', 'row', 'column']}
-              alignItems={['center', 'center', 'center', 'flex-start']}
+              flexDirection={["column"]}
+              // alignItems={["center", "center", "center", "flex-start"]}
               justifyContent="space-between"
             >
-              <Logo>
-              <Box width={['3rem', '4rem', '5rem', '6rem']} color="black">
-                <Link style={{color:'black'}} to="/" aria-label="VickyStrauf, Back to Home">
-                 <Title>Viktoria Strauf</Title>
-                 <Subtitle>graphic & webdesign</Subtitle>
-                  <Love>made with love &hearts;</Love>
-                  
-                </Link>
-              </Box>
-              </Logo>
-              <Nav
-                color={color}
-                mt={[0, 0, 0, 10]}
-                as="nav"
-                flexWrap="nowrap"
-                flexDirection={['row', 'row', 'row', 'column']}
-                alignItems="flex-start"
-              >
-                {data.navigation.nodes.map(item => (
-                  <PartialNavLink to={item.link} key={item.name}>
-                    {item.name}
-                  </PartialNavLink>
-                ))}
-              </Nav>
+              {/* <Logo> */}
+                {/* <Box width={["3rem", "4rem", "5rem", "6rem"]} color="black"> */}
+                  {/* <Link
+                    style={{ color: "black" }}
+                    to="/"
+                    aria-label="VickyStrauf, Back to Home"
+                  > */}
+                    <Title>Viktoria Strauf</Title>
+                    <Subtitle>graphic & webdesign</Subtitle>
+                    <Love>made with love &hearts;</Love>
+                  {/* </Link> */}
+                {/* </Box> */}
+              {/* </Logo> */}
             </Flex>
+            <Nav
+              color={color}
+              mt={[0, 0, 0, 10]}
+              as="nav"
+              flexWrap="nowrap"
+              flexDirection={["row", "row", "row", "column"]}
+              alignItems="flex-start"
+            >
+              {data.navigation.nodes.map(item => (
+                <PartialNavLink to={item.link} key={item.name}>
+                  {item.name}
+                </PartialNavLink>
+              ))}
+            </Nav>
           </SideBarInner>
           <Main>{children}</Main>
           <Footer color={color}>
             <Box p={[6, 6, 8]} fontSize={0}>
-            <div>
-            <a href={`mailto:roadvagabonds@gmail.com`}>
-                    <SocialIcon
-                        preserveAspectRatio="xMidYMid meet"
-                        viewBox="0 0 512 512"
-                        role="img"
-                        aria-hidden="true"
-                        focusable="false"
-                    >
-                        <Mail />
-                    </SocialIcon> 
-                    </a>
+              <div>
+                <a href={`mailto:roadvagabonds@gmail.com`}>
+                  <SocialIcon
+                    preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 512 512"
+                    role="img"
+                    aria-hidden="true"
+                    focusable="false"
+                  >
+                    <Mail />
+                  </SocialIcon>
+                </a>
               </div>
-             <div>Viktoria Strauf, Manly</div>
-             <div>ABN: 99 769 826 112</div>
+              <div>Viktoria Strauf, Manly</div>
+              <div>ABN: 99 769 826 112</div>
             </Box>
           </Footer>
         </Wrapper>
       </>
     </ThemeProvider>
-  )
-}
+  );
+};
 
-export default Layout
+export default Layout;
 
-Layout.defaultProps = defaultProps
+Layout.defaultProps = defaultProps;
 
 const query = graphql`
   query Layout {
@@ -359,4 +380,4 @@ const query = graphql`
       }
     }
   }
-`
+`;
