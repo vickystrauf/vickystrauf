@@ -30,6 +30,7 @@ type BoxProps = SpaceProps & WidthProps & ColorProps & FlexProps & AlignSelfProp
 
 export const Box = styled.div<BoxProps>`
   box-sizing: border-box;
+
   ${space}
   ${width}
   ${color}

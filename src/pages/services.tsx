@@ -47,7 +47,7 @@ const Topic = styled.h1`
 `
 
   return (
-    <Layout color="#f88379">
+    <Layout color="#f2f0ed">
       <SEO title="Services | Viktoria Strauf" desc="Hi. I'm Vicky, a self taught Graphic and Web Designer." />
       <AnimatedBox style={pageAnimation} py={[6, 6, 6, 8]} px={[6, 6, 8, 6, 8, 13]} left-padding={10}>
         <h1>Work with me!</h1> 
@@ -61,7 +61,7 @@ const Topic = styled.h1`
 
       <Container>
         <Row>
-          <h2>Logo Design</h2>
+          <h2>LOGO</h2>
           <ul>
             <li>Face-to-face or Skype meeting to discuss your needs</li>
             <li>3 drafts</li>
@@ -70,7 +70,7 @@ const Topic = styled.h1`
           </ul>
         </Row>
         <Row>
-          <h2>Business Card Design</h2>
+          <h2>BUSINESS CARD</h2>
           <ul>
             <li>Face-to-face or Skype meeting to discuss your needs</li>
             <li>3 drafts</li>
@@ -82,7 +82,7 @@ const Topic = styled.h1`
       <Topic>Webdesign</Topic>
       <Container>
         <Row>
-          <h2>WIX, Squarespace or Wordpress.com</h2>
+          <h2>PLATFORM</h2>
           <ul>
             <li>Face-to-face or Skype meeting to discuss your needs</li>
             <li>Design & Layout of up to 7 pages - responsive Mobile design</li>
@@ -90,7 +90,7 @@ const Topic = styled.h1`
           </ul>
         </Row>
         <Row>
-          <h2>Freestyle</h2>
+          <h2>CUSTOM</h2>
           <ul>
             <li>Face-to-face or Skype meeting to discuss your needs</li>
             <li>Design & Layout of up to 7 pages - responsive Mobile design</li>

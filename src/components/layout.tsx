@@ -26,22 +26,26 @@ const GlobalStyles = createGlobalStyle`
       font-weight: ${theme.fontWeights.bold};
       font-family: 'Times New Roman';
     }
+
     
     h1 {
       // font-size: ${theme.fontSizes[5]};
       font-size: 4.5rem;
-      letter-spacing: -2px;
+      letter-spacing: -3px;
       color: #f88379;
       font-weight: 400;
-      line-height: 0.8;
+      line-height: 0.7;
     }
     h2 {
-      font-size: ${theme.fontSizes[4]};
+      // font-size: ${theme.fontSizes[2]};
       font-weight: 300;
+      font-size: 1.2rem;
     }
+
     h3 {
-      font-size: ${theme.fontSizes[3]};
-    }
+      font-size: ${theme.fontSizes[3]}
+      ;
+    }   
     h4 {
       font-size: ${theme.fontSizes[2]};
     }
@@ -239,6 +243,27 @@ const Footer = styled.footer<{ color: string }>`
   }
 `
 
+const Logo = styled.div`
+ display: flex;
+ text-align: center;`
+
+ const Title = styled.h1`
+//  display: block-inline;
+ text-align: center;
+ margin-block-end: 0;
+ display: flex;
+ margin-block-end: 0.2em;`
+
+ const Subtitle = styled.div`
+//  display: block-inline;
+ text-align: center;
+ font-size: 20px;
+ letter-spacing: 1px;
+ `
+const Love = styled.p`
+ font-size: 14px;
+ color: #f88379;`
+
 type LayoutProps = { children: React.ReactNode } & typeof defaultProps
 
 const defaultProps = {
@@ -269,11 +294,16 @@ const Layout = ({ children, color }: LayoutProps) => {
               alignItems={['center', 'center', 'center', 'flex-start']}
               justifyContent="space-between"
             >
+              <Logo>
               <Box width={['3rem', '4rem', '5rem', '6rem']} color="black">
                 <Link style={{color:'black'}} to="/" aria-label="VickyStrauf, Back to Home">
-                  <h1>Viktoria Strauf</h1>
+                 <Title>Viktoria Strauf</Title>
+                 <Subtitle>graphic & webdesign</Subtitle>
+                  <Love>made with love &hearts;</Love>
+                  
                 </Link>
               </Box>
+              </Logo>
               <Nav
                 color={color}
                 mt={[0, 0, 0, 10]}
