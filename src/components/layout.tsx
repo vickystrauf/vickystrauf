@@ -7,6 +7,7 @@ import { Box, Flex } from "../elements";
 import theme from "../../config/theme";
 import reset from "../styles/reset";
 import Mail from "../icons/Mail";
+import Sidebar from "../components/sidebar"
 
 const GlobalStyles = createGlobalStyle`
   *::before,
@@ -168,60 +169,6 @@ const Wrapper = styled.div`
   }
 `;
 
-const SideBarInner = styled(Box)<{ bg: string }>`
-  position: fixed;
-  height: 100%;
-  width: ${props => props.theme.sidebarWidth.big};
-  display: flex;
-  flex-direction: column;
-  // flex-wrap: nowrap;
-  // justify-content: space-between;
-
-  background: ${props => props.bg};
-
-  @media (max-width: ${props => props.theme.breakpoints[4]}) {
-    width: ${props => props.theme.sidebarWidth.normal};
-  }
-
-  @media (max-width: ${props => props.theme.breakpoints[2]}) {
-    position: relative;
-    width: 100%;
-  }
-
-  svg {
-    fill: ${props => readableColor(`${props.bg}`)};
-  }
-`;
-
-const Nav = styled(Flex)<{ color: string }>`
-  a {
-    text-decoration: none;
-    color: ${props => readableColor(`${props.color}`)};
-    font-size: ${props => props.theme.fontSizes[3]};
-    line-height: 1.5;
-    &:hover,
-    &:focus,
-    &.navlink-active {
-      color: ${props => props.theme.colors.primary};
-    }
-
-    @media (max-width: ${props => props.theme.breakpoints[2]}) {
-      font-size: ${props => props.theme.fontSizes[2]};
-      margin-left: ${props => props.theme.space[4]};
-    }
-
-    @media (max-width: ${props => props.theme.breakpoints[1]}) {
-      font-size: ${props => props.theme.fontSizes[1]};
-      margin-left: ${props => props.theme.space[3]};
-    }
-
-    @media (max-width: ${props => props.theme.breakpoints[0]}) {
-      font-size: ${props => props.theme.fontSizes[0]};
-      margin-left: ${props => props.theme.space[2]};
-    }
-  }
-`;
-
 const Main = styled.main`
   @media (min-width: calc(${props => props.theme.breakpoints[2]} + 1px)) {
     grid-column-start: 2;
@@ -256,32 +203,6 @@ const Footer = styled.footer<{ color: string }>`
   }
 `;
 
-const Logo = styled.div`
-  display: flex;
-  text-align: center;
-`;
-
-const Title = styled.h1`
-  //  display: block-inline;
-  text-align: center;
-  margin-block-end: 0;
-  display: flex;
-  margin-block-end: 0.2em;
-`;
-
-const Subtitle = styled.div`
-  //  display: block-inline;
-  text-align: center;
-  font-size: 20px;
-  letter-spacing: 1px;
-`;
-const Love = styled.p`
-  font-size: 14px;
-  color: #f88379;
-  display: flex;
-  justify-content: center;
-`;
-
 type LayoutProps = { children: React.ReactNode } & typeof defaultProps;
 
 const defaultProps = {
@@ -305,42 +226,7 @@ const Layout = ({ children, color }: LayoutProps) => {
       <>
         <GlobalStyles />
         <Wrapper>
-          <SideBarInner bg={color} as="aside" p={[6, 6, 8]}>
-            <Flex
-              flexWrap="nowrap"
-              flexDirection={["column"]}
-              // alignItems={["center", "center", "center", "flex-start"]}
-              justifyContent="space-between"
-            >
-              {/* <Logo> */}
-                {/* <Box width={["3rem", "4rem", "5rem", "6rem"]} color="black"> */}
-                  {/* <Link
-                    style={{ color: "black" }}
-                    to="/"
-                    aria-label="VickyStrauf, Back to Home"
-                  > */}
-                    <Title>Viktoria Strauf</Title>
-                    <Subtitle>graphic & webdesign</Subtitle>
-                    <Love>made with love &hearts;</Love>
-                  {/* </Link> */}
-                {/* </Box> */}
-              {/* </Logo> */}
-            </Flex>
-            <Nav
-              color={color}
-              mt={[0, 0, 0, 10]}
-              as="nav"
-              flexWrap="nowrap"
-              flexDirection={["row", "row", "row", "column"]}
-              alignItems="flex-start"
-            >
-              {data.navigation.nodes.map(item => (
-                <PartialNavLink to={item.link} key={item.name}>
-                  {item.name}
-                </PartialNavLink>
-              ))}
-            </Nav>
-          </SideBarInner>
+          <Sidebar color={color} data={data}></Sidebar>
           <Main>{children}</Main>
           <Footer color={color}>
             <Box p={[6, 6, 8]} fontSize={0}>
