@@ -1,13 +1,14 @@
 import React from "react";
 import styled, { createGlobalStyle, ThemeProvider } from "styled-components";
-import { graphql, Link, useStaticQuery } from "gatsby";
-import { readableColor } from "polished";
+import { graphql, useStaticQuery } from "gatsby";
+// import { readableColor } from "polished";
 import "typeface-work-sans";
-import { Box, Flex } from "../elements";
+// import { Box, Flex } from "../elements";
 import theme from "../../config/theme";
 import reset from "../styles/reset";
-import Mail from "../icons/Mail";
 import Sidebar from "../components/sidebar"
+import Footer from "../components/footer"
+
 
 const GlobalStyles = createGlobalStyle`
   *::before,
@@ -114,48 +115,27 @@ const GlobalStyles = createGlobalStyle`
   ${reset}
 `;
 
-const isPartiallyActive = ({
-  isPartiallyCurrent
-}: {
-  isPartiallyCurrent: boolean;
-}) =>
-  isPartiallyCurrent
-    ? { className: "navlink-active navlink" }
-    : { className: "navlink" };
+// const isPartiallyActive = ({
+//   isPartiallyCurrent
+// }: {
+//   isPartiallyCurrent: boolean;
+// }) =>
+//   isPartiallyCurrent
+//     ? { className: "navlink-active navlink" }
+//     : { className: "navlink" };
 
-const PartialNavLink = ({
-  children,
-  to,
-  ...rest
-}: {
-  children: React.ReactNode;
-  to: string;
-}) => (
-  <Link getProps={isPartiallyActive} to={to} {...rest}>
-    {children}
-  </Link>
-);
-
-const SocialIcon = styled.svg`
-  vertical-align: middle;
-  display: block;
-  margin: auto;
-  width: 7rem;
-  fill: #f88379;
-  :hover {
-    transform: scale(1);
-    transition: background-color 0.5s, transform 0.5s ease-out;
-    fill: #f88379;
-  }
-  :focus {
-    transform: scale(1.25);
-    transition: background-color 0.5s, transform 0.5s ease-out;
-    fill: #f88379;
-  }
-  // @media screen and (max-width: 1000px) {
-  //     width: 2rem;
-  // }
-`;
+// const PartialNavLink = ({
+//   children,
+//   to,
+//   ...rest
+// }: {
+//   children: React.ReactNode;
+//   to: string;
+// }) => (
+//   <Link getProps={isPartiallyActive} to={to} {...rest}>
+//     {children}
+//   </Link>
+// );
 
 const Wrapper = styled.div`
   display: grid;
@@ -172,34 +152,6 @@ const Wrapper = styled.div`
 const Main = styled.main`
   @media (min-width: calc(${props => props.theme.breakpoints[2]} + 1px)) {
     grid-column-start: 2;
-  }
-`;
-
-const Footer = styled.footer<{ color: string }>`
-  position: fixed;
-  width: ${props => props.theme.sidebarWidth.big};
-  bottom: 0;
-
-  background: ${props => props.color};
-
-  color: ${props =>
-    readableColor(`${props.color}`, `${props.theme.colors.grey}`, "#000000")};
-
-  a {
-    color: ${props => readableColor(`${props.color}`)};
-    text-decoration: none;
-    &:hover {
-      color: ${props => props.theme.colors.primary};
-    }
-  }
-
-  @media (max-width: ${props => props.theme.breakpoints[4]}) {
-    width: ${props => props.theme.sidebarWidth.normal};
-  }
-
-  @media (max-width: ${props => props.theme.breakpoints[2]}) {
-    position: relative;
-    width: 100%;
   }
 `;
 
@@ -228,25 +180,7 @@ const Layout = ({ children, color }: LayoutProps) => {
         <Wrapper>
           <Sidebar color={color} data={data}></Sidebar>
           <Main>{children}</Main>
-          <Footer color={color}>
-            <Box p={[6, 6, 8]} fontSize={0}>
-              <div>
-                <a href={`mailto:roadvagabonds@gmail.com`}>
-                  <SocialIcon
-                    preserveAspectRatio="xMidYMid meet"
-                    viewBox="0 0 512 512"
-                    role="img"
-                    aria-hidden="true"
-                    focusable="false"
-                  >
-                    <Mail />
-                  </SocialIcon>
-                </a>
-              </div>
-              <div>Viktoria Strauf, Manly</div>
-              <div>ABN: 99 769 826 112</div>
-            </Box>
-          </Footer>
+          <Footer color={color}></Footer>
         </Wrapper>
       </>
     </ThemeProvider>
