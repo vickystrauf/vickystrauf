@@ -86,11 +86,9 @@ const ServiceTitle = styled (Box)`
     padding: 1rem;
     color: black;
     font-family: 'Open Sans', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', 'sans-serif', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';;
-    // font-size: 2rem;
     font-size: ${props => props.theme.fontSizes[1]};
     text-align: center;
     letter-spacing: 0.05em;
-    // margin-left: 3rem;
     border-bottom: 0.5px solid black;
     `
     const Service = styled (Box)`
@@ -98,7 +96,6 @@ const ServiceTitle = styled (Box)`
     color: black;
     margin-right: 6rem;
     padding: 1rem;
-    // margin-left: 3rem;
     `   
 
   return (
