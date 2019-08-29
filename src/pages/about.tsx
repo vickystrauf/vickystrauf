@@ -1,8 +1,10 @@
 import React from 'react'
 import { config, useSpring } from 'react-spring'
 import Layout from '../components/layout'
-import { AnimatedBox } from '../elements'
+import { AnimatedBox, Button } from '../elements'
 import SEO from '../components/SEO'
+import styled from 'styled-components'
+import meBeach from '../images/me-beach.jpg'
 
 
 const About = () => {
@@ -12,12 +14,32 @@ const About = () => {
     to: { opacity: 1 },
   })
 
+  const PBox = styled(AnimatedBox)`
+  max-width: 1400px;
+  margin: 0 auto;
+  padding-top: 2rem;
+`
 
+const PButton = styled(Button)`
+  background: #f88379;
+  color: #ffffff;
+  `
+const Vicky = styled.img`
+border-radius: 50%;
+quality: 95;
+max-width: 180px;
+display: block;
+margin-left: auto;
+margin-right: auto;
+width: 50%;
+`
+const hr = 
   return (
     <Layout color="#f2f1f0">
       <SEO title="About | Viktoria Strauf" desc="Hi. I'm Vicky, a self taught Graphic and Web Designer." />
       <AnimatedBox style={pageAnimation} py={[6, 6, 6, 8]} px={[6, 6, 8, 6, 8, 13]} left-padding={10}>
         <h1>Hi. I'm Vicky,</h1> 
+        <hr>
 
         <p>
         a self taught Graphic and Webdesigner living overseas. Creating beautiful designs with love is what I am passionate about.
@@ -35,6 +57,13 @@ const About = () => {
 
         </p>
       </AnimatedBox>
+      <Vicky src={meBeach} alt="Me sitting on the beach" />
+      <PBox style={{ textAlign: 'center' }} py={10} px={[6, 6, 8, 10]}>
+        <h2>Do you want to work with me?</h2>
+        <PButton py={4} px={8}>
+          Contact Me
+        </PButton>
+      </PBox>
     </Layout>
   )
 }
