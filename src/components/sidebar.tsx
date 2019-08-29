@@ -35,6 +35,7 @@ const Title = styled.h1`
   margin-block-end: 0;
   display: flex;
   margin-block-end: 0.2em;
+  color: #f88379
 `;
 
 const Subtitle = styled.div`
@@ -49,6 +50,8 @@ const Love = styled.p`
   color: #f88379;
   display: flex;
   justify-content: center;
+  margin-block-start: 0;
+  padding-block-end: 4rem;
 `;
 
 const Nav = styled(Flex)<{ color: string }>`
