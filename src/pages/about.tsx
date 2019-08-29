@@ -33,14 +33,22 @@ margin-left: auto;
 margin-right: auto;
 width: 50%;
 `
-const hr = 
+
+const CustomHeader = styled.h1`
+  ::after{
+    content: '';
+    display: block;
+    width: 3rem;
+    margin-top: 1rem;
+    border-bottom: 2px solid #f88379;
+  }
+`
+
   return (
     <Layout color="#f2f1f0">
       <SEO title="About | Viktoria Strauf" desc="Hi. I'm Vicky, a self taught Graphic and Web Designer." />
       <AnimatedBox style={pageAnimation} py={[6, 6, 6, 8]} px={[6, 6, 8, 6, 8, 13]} left-padding={10}>
-        <h1>Hi. I'm Vicky,</h1> 
-        <hr>
-
+        <CustomHeader>Hi. I'm Vicky,</CustomHeader> 
         <p>
         a self taught Graphic and Webdesigner living overseas. Creating beautiful designs with love is what I am passionate about.
         I’m super motivated for every new project and can’t wait to start working with you.

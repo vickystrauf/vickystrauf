@@ -44,12 +44,28 @@ const PButton = styled(Button)`
 `
 
 const Topic = styled.h1`
-  // padding-left: 10rem;
   font-size: 2rem;
   letter-spacing: 0.05em;
   font-weight: 350;
   margin-block-end: 4rem;
-  font-family: 'Open Sans', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', 'sans-serif', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';;
+  font-family: 'Open Sans', 
+    '-apple-system', 
+    'BlinkMacSystemFont', 
+    'Segoe UI', 
+    'Roboto', 
+    'Helvetica', 
+    'Arial', 
+    'sans-serif', 
+    'Apple Color Emoji', 
+    'Segoe UI Emoji', 
+    'Segoe UI Symbol';
+  ::after{
+    content: '';
+    display: block;
+    width: 3rem;
+    margin-top: 1rem;
+    border-bottom: 2px solid #f88379;
+  }
   `
 
   const Fancy = styled(Box)<{ color: string }>`
@@ -89,7 +105,7 @@ const ServiceTitle = styled (Box)`
     <Layout color="#f2f0ed">
       <SEO title="Services | Viktoria Strauf" desc="Hi. I'm Vicky, a self taught Graphic and Web Designer." />
       <AnimatedBox style={pageAnimation} py={[6, 6, 6, 8]} px={[6, 6, 8, 6, 8, 13]} left-padding={10}>
-        <h1>Services</h1> 
+        <Topic>Services</Topic> 
         <p>
        You would like to have a fast running and unique website? You are just starting your business and 
        don't want to spend a lot of money on Squarespace or Wix? Hit me a message and we can discuss

@@ -7,7 +7,7 @@ import Mail from "../icons/Mail";
 const SocialIcon = styled.svg`
   vertical-align: middle;
   display: block;
-  margin: auto;
+  // margin: auto;
   width: 7rem;
   fill: #f88379;
   :hover {
