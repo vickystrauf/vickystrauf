@@ -1,9 +1,7 @@
 import React from "react";
 import styled, { createGlobalStyle, ThemeProvider } from "styled-components";
 import { graphql, useStaticQuery } from "gatsby";
-// import { readableColor } from "polished";
 import "typeface-work-sans";
-// import { Box, Flex } from "../elements";
 import theme from "../../config/theme";
 import reset from "../styles/reset";
 import Sidebar from "../components/sidebar"
@@ -114,28 +112,6 @@ const GlobalStyles = createGlobalStyle`
   
   ${reset}
 `;
-
-// const isPartiallyActive = ({
-//   isPartiallyCurrent
-// }: {
-//   isPartiallyCurrent: boolean;
-// }) =>
-//   isPartiallyCurrent
-//     ? { className: "navlink-active navlink" }
-//     : { className: "navlink" };
-
-// const PartialNavLink = ({
-//   children,
-//   to,
-//   ...rest
-// }: {
-//   children: React.ReactNode;
-//   to: string;
-// }) => (
-//   <Link getProps={isPartiallyActive} to={to} {...rest}>
-//     {children}
-//   </Link>
-// );
 
 const Wrapper = styled.div`
   display: grid;

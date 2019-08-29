@@ -1,5 +1,4 @@
 import React from "react";
-// import { Link } from "gatsby";
 import { Box } from "../elements";
 import { readableColor } from "polished";
 import styled from "styled-components";
