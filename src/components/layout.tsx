@@ -4,8 +4,9 @@ import { graphql, useStaticQuery } from "gatsby";
 import "typeface-work-sans";
 import theme from "../../config/theme";
 import reset from "../styles/reset";
-import Sidebar from "../components/sidebar";
-import Footer from "../components/footer";
+import Sidebar from "../components/sidebar"
+import Footer from "../components/footer"
+
 
 const GlobalStyles = createGlobalStyle`
   *::before,
@@ -107,23 +108,26 @@ const GlobalStyles = createGlobalStyle`
       color: ${theme.colors.primary};
     }
   }
+  
   ${reset}
 `;
 
 const Wrapper = styled.div`
-  display: flex;
-  width: 100%;
-  @media screen and (max-width: ${props => props.theme.breakpoints[2]}) {
+  display: grid;
+  grid-template-columns: ${props => props.theme.sidebarWidth.big} 1fr;
+  @media (max-width: ${props => props.theme.breakpoints[4]}) {
+    grid-template-columns: ${props => props.theme.sidebarWidth.normal} 1fr;
+  }
+
+  @media (max-width: ${props => props.theme.breakpoints[2]}) {
+    grid-template-columns: 1fr;
   }
 `;
 
 const Main = styled.main`
-  display: flex;
-  margin-left: 22%;
-
-  // @media (min-width: ${props => props.theme.breakpoints[2]}) {
-  //   grid-column-start: 2;
-  // }
+  @media (min-width: calc(${props => props.theme.breakpoints[2]} + 1px)) {
+    grid-column-start: 2;
+  }
 `;
 
 type LayoutProps = { children: React.ReactNode } & typeof defaultProps;
@@ -151,8 +155,8 @@ const Layout = ({ children, color }: LayoutProps) => {
         <Wrapper>
           <Sidebar color={color} data={data}></Sidebar>
           <Main>{children}</Main>
+          <Footer color={color}></Footer>
         </Wrapper>
-        <Footer color={color}></Footer>
       </>
     </ThemeProvider>
   );

@@ -6,7 +6,6 @@ import Mail from "../icons/Mail";
 
 const SocialIcon = styled.svg`
   vertical-align: middle;
-  display: block;
   width: 7rem;
   fill: #f88379;
   :hover {
@@ -23,7 +22,7 @@ const SocialIcon = styled.svg`
 
 const Wrapper = styled.footer<{ color: string }>`
   position: fixed;
-  width: 22%;
+  width: ${props => props.theme.sidebarWidth.big};
   bottom: 0;
 
   background: ${props => props.color};
@@ -49,11 +48,15 @@ const Wrapper = styled.footer<{ color: string }>`
   }
 `;
 
+const CenterText = styled.div`
+  text-align: center;
+`
+
 const Footer = ({ color }) => {
   return (
     <Wrapper color={color}>
       <Box p={[6, 6, 8]} fontSize={0}>
-        <div>
+        <CenterText>
           <a href={`mailto:roadvagabonds@gmail.com`}>
             <SocialIcon
               preserveAspectRatio="xMidYMid meet"
@@ -65,9 +68,9 @@ const Footer = ({ color }) => {
               <Mail />
             </SocialIcon>
           </a>
-        </div>
-        <div>Viktoria Strauf, Manly</div>
-        <div>ABN: 99 769 826 112</div>
+        </CenterText>
+        <CenterText>Viktoria Strauf, Manly</CenterText>
+        <CenterText>ABN: 99 769 826 112</CenterText>
       </Box>
     </Wrapper>
   );
