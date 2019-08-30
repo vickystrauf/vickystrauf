@@ -33,13 +33,13 @@ margin-left: auto;
 margin-right: auto;
 width: 50%;
 `
-const hr = 
+// const hr = 
   return (
     <Layout color="#f2f1f0">
       <SEO title="About | Viktoria Strauf" desc="Hi. I'm Vicky, a self taught Graphic and Web Designer." />
       <AnimatedBox style={pageAnimation} py={[6, 6, 6, 8]} px={[6, 6, 8, 6, 8, 13]} left-padding={10}>
         <h1>Hi. I'm Vicky,</h1> 
-        <hr>
+        {/* <hr> */}
 
         <p>
         a self taught Graphic and Webdesigner living overseas. Creating beautiful designs with love is what I am passionate about.

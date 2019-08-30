@@ -33,7 +33,7 @@ const GlobalStyles = createGlobalStyle`
       // font-size: ${theme.fontSizes[5]};
       font-size: 4.5rem;
       letter-spacing: -3px;
-      // color: #f88379;
+      // color: #f87d7e;
       color: black;
       font-weight: 400;
       line-height: 0.7;

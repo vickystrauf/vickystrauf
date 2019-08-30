@@ -4,6 +4,10 @@ import Layout from '../components/layout'
 import { AnimatedBox, Button, Box } from '../elements'
 import SEO from '../components/SEO'
 import styled from 'styled-components'
+import logo from '../images/logo.jpg'
+import business from '../images/business.jpg'
+import platform from '../images/platform.jpg'
+import custom from '../images/custom.jpg'
 
 const Services = () => {
 
@@ -13,77 +17,78 @@ const Services = () => {
     to: { opacity: 1 },
   })
 
-  const Container = styled.div`
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-start;
-    padding-left: 10rem;
-    padding-right: 5rem;
-    padding-block-end: 3rem;
-    @media screen and (max-width: 1000px) {
-      flex-wrap: wrap;
-      justify-content: space-between;
-  }
-`
 
-const Row =styled.div`
-    display: block;
-    flex-flow: row wrap;
-    flex-basis: 0;
-    flex-grow: 1;
-  `
   const PBox = styled(AnimatedBox)`
   max-width: 1400px;
   margin: 0 auto;
 `
 
 const PButton = styled(Button)`
-  background: #f88379;
+  background: #f87d7e;
   color: #ffffff;
 `
 
-const Topic = styled.h1`
-  // padding-left: 10rem;
-  font-size: 2rem;
-  letter-spacing: 0.05em;
-  font-weight: 350;
-  margin-block-end: 4rem;
-  font-family: 'Open Sans', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', 'sans-serif', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';;
-  `
+const Wrapper = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-left: 5rem;
+  padding-right: 5rem;
+`
+const LogoBox = styled.div`
+width: 210px;
+height: 210px;
+display: flex;
+justify-content: center;
+align-items: center;
+background-image: url(${logo});
+background-size: cover;
+`
+const BusinessBox = styled.div`
+width: 210px;
+height: 210px;
+display: flex;
+justify-content: center;
+align-items: center;
+background-image: url(${business});
+background-size: cover;
+`
+const PlatformBox = styled.div`
+width: 210px;
+height: 210px;
+display: flex;
+justify-content: center;
+align-items: center;
+background-image: url(${platform});
+background-size: cover;
+`
+const CustomBox = styled.div`
+width: 210px;
+height: 210px;
+display: flex;
+justify-content: center;
+align-items: center;
+background-image: url(${custom});
+background-size: cover;
+`
+const TitleBox = styled.div`
+width: 180px;
+height: 80px;
+opacity: 0.9;
+background: #FFFFFF;
+display: flex;
+justify-content: center;
+align-items: center;
+text-transform: uppercase;
+text-align: center;
+letter-spacing: 0.05em;
+font-size: 1.2rem;`
 
-  const Fancy = styled(Box)<{ color: string }>`
-    text-align : center;
-    width  : 2em;
-    height : 2em;
-    margin: auto;
-    border-radius: 100%;
-    font-size: 2.488rem;
-    font-family: Times New Roman;
-    color: #ffffff;
-    background:  ${props => props.color};
-  }
-  `
-const ServiceTitle = styled (Box)`
-    background: #f2f0ed;
-    margin-right: 6rem;
-    padding: 1rem;
-    color: black;
-    font-family: 'Open Sans', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', 'sans-serif', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';;
-    // font-size: 2rem;
-    font-size: ${props => props.theme.fontSizes[1]};
-    text-align: center;
-    letter-spacing: 0.05em;
-    // margin-left: 3rem;
-    border-bottom: 0.5px solid black;
-    `
-    const Service = styled (Box)`
-    background: #f2f0ed;
-    color: black;
-    margin-right: 6rem;
-    padding: 1rem;
-    // margin-left: 3rem;
-    `   
+// const TextBox = styled.p`
+//   margin: 0;
+//   text-transform: uppercase;
+// `
+
 
   return (
     <Layout color="#f2f0ed">
@@ -96,81 +101,20 @@ const ServiceTitle = styled (Box)`
        your needs and I will tell your what I can do better than Squarespace and Wix.
         </p>
       </AnimatedBox>
-      <Topic>GRAPHIC DESIGN</Topic>
-      <Container>
-        <Row>
-          <ServiceTitle>
-          LOGO 
-          </ServiceTitle>
-          <Service>
-          I will design a beautiful Logo to give your business a remorable frontdoor.
-          </Service>
-          </Row>
-          <Row>
-        <ServiceTitle>
-          BUSINESS CARD
-        </ServiceTitle>
-          <Service>Get known by people and leave them your details with a beautiful business card.
-        </Service>
-        </Row>
-      </Container>
-      <Topic>HOW IT ALL WORKS?</Topic>
-      <Container>
-      <Row>
-      <Fancy color="#fde74c">1</Fancy>
-      Face-to-face or Skype meeting to discuss your needs
-      </Row>  
-      <Row>
-      <Fancy color="#ff1654">2</Fancy>
-            3 drafts
-        </Row>  
-        <Row>
-        <Fancy color="#ff9f1c">3</Fancy>
-            With your feedback I will make up to two changes
-        </Row> 
-        <Row>
-        <Fancy color="#4ecdc4">4</Fancy>
-            Delivery of the final design files
-        </Row> 
-      </Container>
-      <Topic>WEBDESIGN</Topic>
-      <Container>
-        <Row>
-          <ServiceTitle>
-            PLATFORM
-          </ServiceTitle>
-          <Service>
-          I will design a beautiful Logo to give your business a remorable frontdoor.
-          </Service>
-          </Row>
-          <Row>
-        <ServiceTitle>
-          CUSTOM
-        </ServiceTitle>
-          <Service>Get known by people and leave them your details with a beautiful business card.
-        </Service>
-        </Row>
-      </Container>
-      <Container></Container>
-      <Topic>HOW IT ALL WORKS?</Topic>
-      <Container>
-        <Row>
-      <Fancy color="#fde74c">1</Fancy>
-      Face-to-face or Skype meeting to discuss your needs
-      </Row>  
-      <Row>
-      <Fancy color="#ff1654">2</Fancy>
-      Design & Layout of up to 7 pages - responsive Mobile design
-        </Row>  
-        <Row>
-        <Fancy color="#ff9f1c">3</Fancy>
-            Minor changes
-        </Row> 
-        <Row>
-        <Fancy color="#4ecdc4">4</Fancy>
-        Final Consultation - Walk through
-        </Row>
-      </Container>
+      <Wrapper>
+        <LogoBox alt="Logo Design">
+          <TitleBox>Logo</TitleBox>
+          </LogoBox> 
+        <BusinessBox alt="Business Card Design">
+        <TitleBox>Business Card</TitleBox>
+        </BusinessBox>
+        <PlatformBox alt="Platform based Webdesign">
+        <TitleBox>Platform Webdesign</TitleBox>
+        </PlatformBox>
+        <CustomBox alt="Custom Webdesign">
+        <TitleBox>Custom Webdesign</TitleBox>
+        </CustomBox>
+      </Wrapper>
       <PBox style={{ textAlign: 'center' }} py={10} px={[6, 6, 8, 10]}>
         <h2>Book your free consultation today!</h2>
         <PButton py={4} px={8}>

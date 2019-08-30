@@ -35,7 +35,7 @@ const Title = styled.h1`
   margin-block-end: 0;
   display: flex;
   margin-block-end: 0.2em;
-  color: #f88379
+  color: #f87d7e
 `;
 
 const Subtitle = styled.div`
@@ -47,7 +47,7 @@ const Subtitle = styled.div`
 
 const Love = styled.p`
   font-size: 14px;
-  color: #f88379;
+  color: #f87d7e;
   display: flex;
   justify-content: center;
   margin-block-start: 0;
