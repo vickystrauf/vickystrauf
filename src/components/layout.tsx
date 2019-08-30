@@ -19,7 +19,6 @@ const GlobalStyles = createGlobalStyle`
     box-sizing: border-box;
     border: 0;
     margin: 0;
-    
     h1, h3, h4, h5, h6 {
       font-weight: ${theme.fontWeights.bold};
       font-family: 'Times New Roman';

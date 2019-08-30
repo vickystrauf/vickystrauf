@@ -21,6 +21,7 @@ const SocialIcon = styled.svg`
   }
 `;
 
+
 const Wrapper = styled.footer<{ color: string }>`
   position: fixed;
   width: 22%;

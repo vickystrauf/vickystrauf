@@ -84,6 +84,7 @@ const Nav = styled(Flex)<{ color: string }>`
   }
 `;
 
+
 const isPartiallyActive = ({
   isPartiallyCurrent
 }: {
