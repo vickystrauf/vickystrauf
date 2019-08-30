@@ -7,22 +7,23 @@ import styled from "styled-components";
 const SideBarInner = styled(Box)<{ bg: string }>`
   position: fixed;
   height: 100%;
-  width: ${props => props.theme.sidebarWidth.big};
-  display: flex;
-  flex-direction: column;
+  // width: ${props => props.theme.sidebarWidth.big};
+  width: 22%;
+  // display: flex;
+  // flex-direction: column;
   // flex-wrap: nowrap;
   // justify-content: space-between;
 
   background: ${props => props.bg};
 
-  @media (max-width: ${props => props.theme.breakpoints[4]}) {
-    width: ${props => props.theme.sidebarWidth.normal};
-  }
+  // @media (max-width: ${props => props.theme.breakpoints[4]}) {
+  //   width: ${props => props.theme.sidebarWidth.normal};
+  // }
 
-  @media (max-width: ${props => props.theme.breakpoints[2]}) {
-    position: relative;
-    width: 100%;
-  }
+  // @media (max-width: ${props => props.theme.breakpoints[2]}) {
+  //   position: relative;
+  //   width: 100%;
+  // }
 
   svg {
     fill: ${props => readableColor(`${props.bg}`)};

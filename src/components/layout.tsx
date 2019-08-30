@@ -4,9 +4,8 @@ import { graphql, useStaticQuery } from "gatsby";
 import "typeface-work-sans";
 import theme from "../../config/theme";
 import reset from "../styles/reset";
-import Sidebar from "../components/sidebar"
-import Footer from "../components/footer"
-
+import Sidebar from "../components/sidebar";
+import Footer from "../components/footer";
 
 const GlobalStyles = createGlobalStyle`
   *::before,
@@ -28,16 +27,13 @@ const GlobalStyles = createGlobalStyle`
 
     
     h1 {
-      // font-size: ${theme.fontSizes[5]};
       font-size: 4.5rem;
       letter-spacing: -3px;
-      // color: #f88379;
       color: black;
       font-weight: 400;
       line-height: 0.7;
     }
     h2 {
-      // font-size: ${theme.fontSizes[2]};
       font-weight: 300;
       font-size: 1.2rem;
     }
@@ -111,26 +107,23 @@ const GlobalStyles = createGlobalStyle`
       color: ${theme.colors.primary};
     }
   }
-  
   ${reset}
 `;
 
 const Wrapper = styled.div`
-  display: grid;
-  grid-template-columns: ${props => props.theme.sidebarWidth.big} 1fr;
-  @media (max-width: ${props => props.theme.breakpoints[4]}) {
-    grid-template-columns: ${props => props.theme.sidebarWidth.normal} 1fr;
-  }
-
-  @media (max-width: ${props => props.theme.breakpoints[2]}) {
-    grid-template-columns: 1fr;
+  display: flex;
+  width: 100%;
+  @media screen and (max-width: ${props => props.theme.breakpoints[2]}) {
   }
 `;
 
 const Main = styled.main`
-  @media (min-width: calc(${props => props.theme.breakpoints[2]} + 1px)) {
-    grid-column-start: 2;
-  }
+  display: flex;
+  margin-left: 22%;
+
+  // @media (min-width: ${props => props.theme.breakpoints[2]}) {
+  //   grid-column-start: 2;
+  // }
 `;
 
 type LayoutProps = { children: React.ReactNode } & typeof defaultProps;
@@ -158,8 +151,8 @@ const Layout = ({ children, color }: LayoutProps) => {
         <Wrapper>
           <Sidebar color={color} data={data}></Sidebar>
           <Main>{children}</Main>
-          <Footer color={color}></Footer>
         </Wrapper>
+        <Footer color={color}></Footer>
       </>
     </ThemeProvider>
   );
