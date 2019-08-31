@@ -10,18 +10,16 @@ import platform from '../images/platform.jpg'
 import custom from '../images/custom.jpg'
 
 const Services = () => {
-
   const pageAnimation = useSpring({
     config: config.slow,
     from: { opacity: 0 },
-    to: { opacity: 1 },
-  })
-
+    to: { opacity: 1 }
+  });
 
   const PBox = styled(AnimatedBox)`
-  max-width: 1400px;
-  margin: 0 auto;
-`
+    max-width: 1400px;
+    margin: 0 auto;
+  `;
 
 const PButton = styled(Button)`
   background: #f87d7e;
@@ -125,4 +123,4 @@ font-size: 1.2rem;`
   )
 }
 
-export default Services
+export default Services;

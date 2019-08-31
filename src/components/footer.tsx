@@ -1,5 +1,4 @@
 import React from "react";
-// import { Link } from "gatsby";
 import { Box } from "../elements";
 import { readableColor } from "polished";
 import styled from "styled-components";
@@ -8,7 +7,6 @@ import Mail from "../icons/Mail";
 const SocialIcon = styled.svg`
   vertical-align: middle;
   display: block;
-  margin: auto;
   width: 7rem;
   fill: #f88379;
   :hover {
@@ -21,14 +19,12 @@ const SocialIcon = styled.svg`
     transition: background-color 0.5s, transform 0.5s ease-out;
     fill: #f88379;
   }
-  // @media screen and (max-width: 1000px) {
-  //     width: 2rem;
-  // }
 `;
+
 
 const Wrapper = styled.footer<{ color: string }>`
   position: fixed;
-  width: ${props => props.theme.sidebarWidth.big};
+  width: 22%;
   bottom: 0;
 
   background: ${props => props.color};
