@@ -7,23 +7,17 @@ import styled from "styled-components";
 const SideBarInner = styled(Box)<{ bg: string }>`
   position: fixed;
   height: 100%;
-  // width: ${props => props.theme.sidebarWidth.big};
-  width: 22%;
-  // display: flex;
-  // flex-direction: column;
-  // flex-wrap: nowrap;
-  // justify-content: space-between;
-
+  width: ${props => props.theme.sidebarWidth.big};
+  display: flex;
+  flex-direction: column;
   background: ${props => props.bg};
-
-  // @media (max-width: ${props => props.theme.breakpoints[4]}) {
-  //   width: ${props => props.theme.sidebarWidth.normal};
-  // }
-
-  // @media (max-width: ${props => props.theme.breakpoints[2]}) {
-  //   position: relative;
-  //   width: 100%;
-  // }
+  @media (max-width: ${props => props.theme.breakpoints[4]}) {
+    width: ${props => props.theme.sidebarWidth.normal};
+  }
+  @media (max-width: ${props => props.theme.breakpoints[2]}) {
+    position: relative;
+    width: 100%;
+  }
 
   svg {
     fill: ${props => readableColor(`${props.bg}`)};
@@ -31,16 +25,17 @@ const SideBarInner = styled(Box)<{ bg: string }>`
 `;
 
 const Title = styled.h1`
-  //  display: block-inline;
   text-align: center;
   margin-block-end: 0;
   display: flex;
   margin-block-end: 0.2em;
-  color: #f87d7e
+  color: #f88379;
+  @media (max-width: ${props => props.theme.breakpoints[2]}) {
+    display: block;
+  }
 `;
 
 const Subtitle = styled.div`
-  //  display: block-inline;
   text-align: center;
   font-size: 20px;
   letter-spacing: 1px;
@@ -56,6 +51,7 @@ const Love = styled.p`
 `;
 
 const Nav = styled(Flex)<{ color: string }>`
+  align-items: center;
   a {
     text-decoration: none;
     color: ${props => readableColor(`${props.color}`)};
@@ -70,6 +66,7 @@ const Nav = styled(Flex)<{ color: string }>`
     @media (max-width: ${props => props.theme.breakpoints[2]}) {
       font-size: ${props => props.theme.fontSizes[2]};
       margin-left: ${props => props.theme.space[4]};
+      justify-content: space-between;
     }
 
     @media (max-width: ${props => props.theme.breakpoints[1]}) {
