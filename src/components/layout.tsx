@@ -15,7 +15,7 @@ const GlobalStyles = createGlobalStyle`
   }
   ::selection {
     color: white;
-    background-color: #f88379 }
+    background-color: #f87d7e }
   html {
     box-sizing: border-box;
     border: 0;
@@ -56,7 +56,7 @@ const GlobalStyles = createGlobalStyle`
       font-size: 16px;
       
       h1 {
-        font-size: ${theme.fontSizes[4]};
+        font-size: 2.44rem;
         letter-spacing: -2px;
       }
       h2 {

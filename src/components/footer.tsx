@@ -7,16 +7,16 @@ import Mail from "../icons/Mail";
 const SocialIcon = styled.svg`
   vertical-align: middle;
   width: 7rem;
-  fill: #f88379;
+  fill: #f87d7e;
   :hover {
     transform: scale(1);
     transition: background-color 0.5s, transform 0.5s ease-out;
-    fill: #f88379;
+    fill: #f87d7e;
   }
   :focus {
     transform: scale(1.25);
     transition: background-color 0.5s, transform 0.5s ease-out;
-    fill: #f88379;
+    fill: #f87d7e;
   }
 `;
 

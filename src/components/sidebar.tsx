@@ -29,7 +29,7 @@ const Title = styled.h1`
   margin-block-end: 0;
   display: flex;
   margin-block-end: 0.2em;
-  color: #f88379;
+  color: #f87d7e;
   @media (max-width: ${props => props.theme.breakpoints[2]}) {
     display: block;
   }

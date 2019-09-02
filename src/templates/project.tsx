@@ -39,7 +39,7 @@ const Description = styled(animated.div)`
 `
 
 const PButton = styled(Button)<{ color: string }>`
-  background: #f88379;
+  background: #f87d7e;
   color: #ffffff;
 `
 

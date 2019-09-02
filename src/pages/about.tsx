@@ -21,7 +21,7 @@ const About = () => {
 `
 
 const PButton = styled(Button)`
-  background: #f88379;
+  background: #f87d7e;
   color: #ffffff;
   `
 const Vicky = styled.img`
@@ -40,7 +40,7 @@ const CustomHeader = styled.h1`
     display: block;
     width: 3rem;
     margin-top: 1rem;
-    border-bottom: 2px solid #f88379;
+    border-bottom: 2px solid #f87d7e;
   }
 `
 
