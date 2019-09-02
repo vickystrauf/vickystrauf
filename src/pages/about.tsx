@@ -39,7 +39,7 @@ const CustomHeader = styled.h1`
     content: '';
     display: block;
     width: 3rem;
-    margin-top: 1rem;
+    margin-top: 2rem;
     border-bottom: 2px solid #f87d7e;
   }
 `

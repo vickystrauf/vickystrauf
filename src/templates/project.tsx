@@ -43,6 +43,16 @@ const PButton = styled(Button)<{ color: string }>`
   color: #ffffff;
 `
 
+const CustomHeader = styled.h1`
+  ::after{
+    content: '';
+    display: block;
+    width: 3rem;
+    margin-top: 2rem;
+    border-bottom: 2px solid #f87d7e;
+  }
+`
+
 type PageProps = {
   data: {
     project: {
@@ -90,7 +100,7 @@ const Project: React.FunctionComponent<PageProps> = ({ data: { project, images }
     to: { opacity: 1, transform: 'translate3d(0, 0, 0)' },
   })
 
-  const titleAnimation = useSpring({ config: config.slow, delay: 300, from: { opacity: 0 }, to: { opacity: 1 } })
+  // const titleAnimation = useSpring({ config: config.slow, delay: 300, from: { opacity: 0 }, to: { opacity: 1 } })
   const descAnimation = useSpring({ config: config.slow, delay: 600, from: { opacity: 0 }, to: { opacity: 1 } })
   const imagesAnimation = useSpring({ config: config.slow, delay: 800, from: { opacity: 0 }, to: { opacity: 1 } })
 
@@ -106,7 +116,8 @@ const Project: React.FunctionComponent<PageProps> = ({ data: { project, images }
       />
       <PBox py={10} px={[6, 6, 8, 10]}>
         <Category style={categoryAnimation}>{project.category}</Category>
-        <animated.h1 style={titleAnimation}>{project.title_detail}</animated.h1>
+        {/* <animated.h1 style={titleAnimation}>{project.title_detail}</animated.h1> */}
+        <CustomHeader>{project.title_detail}</CustomHeader>
         <Description style={descAnimation}>
           <div dangerouslySetInnerHTML={{ __html: project.desc }} />
         </Description>
