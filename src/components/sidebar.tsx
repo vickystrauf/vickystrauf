@@ -84,16 +84,6 @@ const Nav = styled(Flex)<{ color: string }>`
   }
 `;
 
-
-const isPartiallyActive = ({
-  isPartiallyCurrent
-}: {
-  isPartiallyCurrent: boolean;
-}) =>
-  isPartiallyCurrent
-    ? { className: "navlink-active navlink" }
-    : { className: "navlink" };
-
 const PartialNavLink = ({
   children,
   to,
@@ -102,7 +92,7 @@ const PartialNavLink = ({
   children: React.ReactNode;
   to: string;
 }) => (
-  <Link getProps={isPartiallyActive} to={to} {...rest}>
+  <Link activeStyle={{color: '#f87d7e'}} to={to} {...rest}>
     {children}
   </Link>
 );
