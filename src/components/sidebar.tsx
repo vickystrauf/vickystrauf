@@ -48,6 +48,9 @@ const Love = styled.p`
   justify-content: center;
   margin-block-start: 0;
   padding-block-end: 4rem;
+  @media (max-width: ${props => props.theme.breakpoints[2]}) {
+    padding-block-end: 1rem;
+  }
 `;
 
 const Nav = styled(Flex)<{ color: string }>`
