@@ -53,6 +53,10 @@ export const AnimatedBox = styled(animated.div)<AnimatedBoxProps>`
   ${flex}
   ${alignSelf}
   ${textAlign}
+  @media (max-width: ${props => props.theme.breakpoints[2]}) { 
+    padding-top: 1rem;
+  }
+  
 `
 
 AnimatedBox.displayName = 'AnimatedBox'

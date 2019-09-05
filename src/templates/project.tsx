@@ -11,16 +11,21 @@ import SEO from '../components/SEO'
 const PBox = styled(AnimatedBox)`
   max-width: 1400px;
   margin: 0 auto;
+  @media (max-width: ${props => props.theme.breakpoints[2]}) {
+  padding-bottom: 1rem;}
 `
 
 const Content = styled(Box)<{ bg: string }>`
   background-color: ${props => transparentize(0.9, props.bg)};
+  padding-top: 1rem;
 
   .gatsby-image-wrapper:not(:last-child) {
     margin-bottom: ${props => props.theme.space[10]};
 
     @media (max-width: ${props => props.theme.breakpoints[3]}) {
-      margin-bottom: ${props => props.theme.space[8]};
+      // margin-bottom: ${props => props.theme.space[8]};
+    padding-bottom: 1rem;
+    margin-bottom: 2rem;
     }
   }
 `
@@ -29,6 +34,9 @@ const Category = styled(AnimatedBox)`
   letter-spacing: 0.05em;
   font-size: ${props => props.theme.fontSizes[1]};
   text-transform: uppercase;
+  @media (max-width: ${props => props.theme.breakpoints[2]}) {
+    font-size: 1rem;
+  }
 `
 
 const Description = styled(animated.div)`
@@ -41,6 +49,7 @@ const Description = styled(animated.div)`
 const PButton = styled(Button)<{ color: string }>`
   background: #f87d7e;
   color: #ffffff;
+  }
 `
 
 const CustomHeader = styled.h1`

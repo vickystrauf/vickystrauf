@@ -56,8 +56,9 @@ const GlobalStyles = createGlobalStyle`
       font-size: 16px;
       
       h1 {
-        font-size: 2.44rem;
+        font-size: 2.3rem;
         letter-spacing: -2px;
+        line-height: 1;
       }
       h2 {
         font-size: ${theme.fontSizes[1]};

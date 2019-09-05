@@ -3,10 +3,21 @@ import { Box } from "../elements";
 import { readableColor } from "polished";
 import styled from "styled-components";
 import Mail from "../icons/Mail";
+import Phone from "../icons/Phone";
+
+
+const SocialWrapper = styled.div`
+display: grid;
+grid-template-columns: 10px 10px;
+grid-gap: 50px;
+grid-template-rows: 1;
+justify-content: center;
+height: 50px;
+`
 
 const SocialIcon = styled.svg`
-  vertical-align: middle;
-  width: 7rem;
+vertical-align: middle;
+  width: 8rem;
   fill: #f87d7e;
   :hover {
     transform: scale(1);
@@ -57,6 +68,7 @@ const Footer = ({ color }) => {
   return (
     <Wrapper color={color}>
       <Box p={[6, 6, 8]} fontSize={0}>
+        <SocialWrapper>
         <CenterText>
           <a href={`mailto:roadvagabonds@gmail.com`}>
             <SocialIcon
@@ -70,6 +82,20 @@ const Footer = ({ color }) => {
             </SocialIcon>
           </a>
         </CenterText>
+        <CenterText>
+          <a href={`tel:123-456-7890">123-456-7890`}>
+            <SocialIcon
+              preserveAspectRatio="xMidYMid meet"
+              viewBox="0 0 512 512"
+              role="img"
+              aria-hidden="true"
+              focusable="false"
+            >
+              <Phone />
+            </SocialIcon>
+          </a>
+        </CenterText>
+        </SocialWrapper>
         <CenterText>Viktoria Strauf, Manly</CenterText>
         <CenterText>ABN: 99 769 826 112</CenterText>
       </Box>

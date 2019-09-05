@@ -3,13 +3,9 @@ import React from 'react'
 const Mail = () => (
 
   <g>
-    <path d="M341.44,428.81a11.89,11.89,0,0,1,6.89-2.19h90.83a13.26,13.26,0,0,1,13.22,13.22v53.58a12.83,12.83,0,0,1-12.79,12.79H349.13a12.83,12.83,0,0,1-12.79-12.79V438.6a12,12,0,0,1,5.1-9.79" transform="translate(-75.31 -33.62)" fill="#f48278" stroke="#fff" stroke-miterlimit="10" stroke-width="4"/>
-    <path d="M446.83,428.42l-50,54a3.67,3.67,0,0,1-5.37,0l-50.62-53.6" transform="translate(-75.31 -33.62)" fill="#f48278" stroke="#fff" stroke-miterlimit="10" stroke-width="4"/>
-    <line x1="336.82" y1="433.45" x2="373.59" y2="469.03" fill="#f48278" stroke="#fff" stroke-miterlimit="10" stroke-width="4"/>
-    <line x1="302.85" y1="432.79" x2="264.97" y2="469.45" fill="#f48278" stroke="#fff" stroke-miterlimit="10" stroke-width="4"/>
-  </g>
+<svg xmlns="http://www.w3.org/2000/svg" width="141.75" height="141.75" viewBox="0 0 141.75 141.75"><title>Untitled-2</title><circle cx="70.88" cy="70.88" r="70.88" fill="#f27c7e"/><path d="M53.75,58.62A8.89,8.89,0,0,1,58.89,57h67.72a9.89,9.89,0,0,1,9.86,9.86v40a9.56,9.56,0,0,1-9.53,9.54H59.49A9.56,9.56,0,0,1,50,106.79V65.92a9,9,0,0,1,3.8-7.3" transform="translate(-22.34 -19.12)" fill="#fff" stroke="#f27c7e" stroke-miterlimit="10" stroke-width="3"/><path d="M132.33,58.33,95,98.59a2.75,2.75,0,0,1-4,0l-37.74-40" transform="translate(-22.34 -19.12)" fill="#fff" stroke="#f27c7e" stroke-miterlimit="10" stroke-width="3"/><line x1="84.12" y1="68.02" x2="111.54" y2="94.55" fill="#fff" stroke="#f27c7e" stroke-miterlimit="10" stroke-width="3"/><line x1="58.79" y1="67.53" x2="30.55" y2="94.87" fill="#fff" stroke="#f27c7e" stroke-miterlimit="10" stroke-width="3"/></svg>
 
-
+</g>
 )
 
-export default Mail
+export default Mail 
