@@ -6,7 +6,7 @@
   images: "sweetsydney"
   cover: "./graphic/sweetsydney/sweet-sydney-business-card-mockup.jpg"
   desc: "Menu, Grand Opening Flyer and Business Card design in fresh and friendly colors for a vegan bakery.<br> 
-  All jobs done with Adobe Illustrator and Photoshop.<br> Treat yourself!"
+  Tools used: Adobe Illustrator and Photoshop.<br> Treat yourself!"
 - title: "Coffee & Chocolate"
   title_detail: "Coffee & Chocolate"
   slug: "coffee-and-chocolate"
@@ -15,7 +15,7 @@
   images: "coffeeandchocolate"
   cover: "./graphic/coffeeandchocolate/m-coffee-and-chocolate-mockup.png"
   desc: "Logo and Packaging Design for a cafe serving local coffee and selfmade chocolate.<br>
-        Tools I used to complete this job: Adobe Illustrator & Photoshop."
+        Tools used: Adobe Illustrator & Photoshop."
 - title: "Together"
   title_detail: "Together - Roadtrip Magazine"
   slug: "together"
@@ -25,7 +25,7 @@
   cover: "./graphic/together/together-magazine-mockup.jpg"
   desc: "Editorial Design for a magazine where people share their amazing roadtrip stories.<br>
   The following example is featuring a roadtrip on the west coast of the USA.<br>
-  Job completed with Adobe InDesign."
+  Tools used: Adobe InDesign."
 - title: "The Loft"
   title_detail: "The Loft"
   slug: "the-loft"
@@ -35,7 +35,7 @@
   cover: "./graphic/theloft/the-loft-logo.jpg"
   desc: "Logo and Stationary Design for a women-only coworking space in Bali. <br>
   As it's a woman-only place colors and design have a female touch. <br>
-  For this job I used Adobe Illustratpr & Photoshop."
+  Tools used: Adobe Illustratpr & Photoshop."
 - title: "OrthoEasySock"
   title_detail: "Ortho Easy Sock"
   slug: "ortho-easy-sock"
@@ -44,8 +44,8 @@
   images: "orthoeasysock"
   cover: "./web/orthoeasysock/ortho-easy-sock-website.jpg"
   desc: "Ortho Easy Sock, a great product to make people's life easier. <br>
-        WIX Website Design with the goal to keep the website simple and easy accessible."
-- title: "Kicthen Sorted"
+        Designed with WIX Website Design with the goal to keep the website simple and easy accessible."
+- title: "Kitchen Sorted"
   title_detail: "Kitchen Sorted"
   slug: "kitchen-sorted"
   category: "Website Design"
@@ -54,7 +54,7 @@
   cover: "./web/kitchensorted/kitchen-sorted-website-03.jpg"
   desc: "A new business offering professional service to get your kitchen sorted and organised. <br>
         The job was to design a website and business card to create an overall style.<br>
-        Website was designed within WIX and the business card with Adobe Illustrator."
+        Website was designed with WIX and the business card with Adobe Illustrator."
 - title: "myEnvoy"
   title_detail: "myEnvoy"
   slug: "my-envoy"
