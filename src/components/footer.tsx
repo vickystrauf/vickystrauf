@@ -83,7 +83,7 @@ const Footer = ({ color }) => {
           </a>
         </CenterText>
         <CenterText>
-          <a href={`tel:+61-422-097-053">+61-422-097-053`}>
+          <a href={`tel:+61-422-097-053"`}>
             <SocialIcon
               preserveAspectRatio="xMidYMid meet"
               viewBox="0 0 512 512"
