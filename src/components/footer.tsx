@@ -70,7 +70,7 @@ const Footer = ({ color }) => {
       <Box p={[6, 6, 8]} fontSize={0}>
         <SocialWrapper>
         <CenterText>
-          <a href={`mailto:roadvagabonds@gmail.com`}>
+          <a href={`mailto:viktoria.strauf@gmail.com`}>
             <SocialIcon
               preserveAspectRatio="xMidYMid meet"
               viewBox="0 0 512 512"
@@ -83,7 +83,7 @@ const Footer = ({ color }) => {
           </a>
         </CenterText>
         <CenterText>
-          <a href={`tel:123-456-7890">123-456-7890`}>
+          <a href={`tel:+61-422-097-053">+61-422-097-053`}>
             <SocialIcon
               preserveAspectRatio="xMidYMid meet"
               viewBox="0 0 512 512"
