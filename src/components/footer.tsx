@@ -7,10 +7,10 @@ import Mail from "../icons/Mail";
 
 
 const SocialWrapper = styled.div`
-display: grid;
-grid-template-columns: 10px 10px;
-grid-gap: 50px;
-grid-template-rows: 1;
+// display: grid;
+// grid-template-columns: 10px 10px;
+// grid-gap: 50px;
+// grid-template-rows: 1;
 justify-content: center;
 height: 50px;
 `

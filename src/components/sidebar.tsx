@@ -31,7 +31,8 @@ const Title = styled.h1`
   margin-block-end: 0.2em;
   color: #f87d7e;
   @media (max-width: ${props => props.theme.breakpoints[2]}) {
-    font-size: 2.9rem;
+    font-size: 4rem;
+    line-height: 0.7;
     display: block;
   }
 `;
