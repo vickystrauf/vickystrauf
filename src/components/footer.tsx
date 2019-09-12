@@ -3,7 +3,7 @@ import { Box } from "../elements";
 import { readableColor } from "polished";
 import styled from "styled-components";
 import Mail from "../icons/Mail";
-import Phone from "../icons/Phone";
+// import Phone from "../icons/Phone";
 
 
 const SocialWrapper = styled.div`
@@ -82,7 +82,7 @@ const Footer = ({ color }) => {
             </SocialIcon>
           </a>
         </CenterText>
-        <CenterText>
+        {/* <CenterText>
           <a href={`tel:+61-422-097-053"`}>
             <SocialIcon
               preserveAspectRatio="xMidYMid meet"
@@ -94,7 +94,7 @@ const Footer = ({ color }) => {
               <Phone />
             </SocialIcon>
           </a>
-        </CenterText>
+        </CenterText> */}
         </SocialWrapper>
         <CenterText>Viktoria Strauf, Manly</CenterText>
         <CenterText>ABN: 99 769 826 112</CenterText>
